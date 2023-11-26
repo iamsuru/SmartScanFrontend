@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import PropTypes from 'prop-types';
 import QRcontainer from './QRcontainer';
+import OptionChooser from './OptionChooser';
 
 function ModalChooser(props) {
   const generateUniqueID = () => {
@@ -28,13 +29,13 @@ function ModalChooser(props) {
     toggle()
   }
 
-  useEffect(()=>{
-    if(modal){
+  useEffect(() => {
+    if (modal) {
       const uniqueCode = generateUniqueID()
       console.log(uniqueCode);
       setUniqueCode(uniqueCode)
     }
-  },[modal])
+  }, [modal])
 
 
 
@@ -46,20 +47,10 @@ function ModalChooser(props) {
     >
       <ModalHeader toggle={handleCancel}>Choose Option</ModalHeader>
       <ModalBody className='text-center'>
-        {showQRCode ? (<div id='qrcode-container'>
-          <QRcontainer uniqueCode={uniqueCode} />
-        </div>
+        {showQRCode ? (
+          <QRcontainer uniqueCode={uniqueCode} onTimerComplete={handleCancel} />
         ) : (
-          <div id='optionchooser'>
-            <div className="input-group mb-4 ps-5 pe-5">
-              <input type="file" className="form-control" id="inputGroupFile02" />
-            </div>
-            <label>OR</label>
-            <div className='ps-5 pe-5 mt-4'>
-              <label className='me-5'>Using SmartScan</label>
-              <input className=' ms-5 btn btn-info' type='button' value='Show QR Code' onClick={handleShowQRCode} />
-            </div>
-          </div>
+          <OptionChooser handleShowQRCode={handleShowQRCode} />
         )}
       </ModalBody>
       <ModalFooter>
