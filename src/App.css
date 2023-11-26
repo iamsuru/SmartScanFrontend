@@ -1,7 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins:ital@1&family=Roboto+Slab:wght@900&display=swap");
+/* Background.js */ 
 
-/* Background.js */
-
+label, .nav-nav-link{
+  font-family: 'Rubik', sans-serif;
+}
 .bg-img {
   background-image: url(../public/images/landscape_background.png);
   width: 100%;
@@ -34,30 +35,34 @@
   color: #fff;
 }
 
+.logo {
+  font-family: 'Bungee Spice', sans-serif;
+  font-size: 30px;
+}
 
 /* Login.js */
- .login-container{
-    display: flex;
-    flex-direction: row;
-    height: 90vh;
-    justify-content: center;
-    align-items: center;
+.login-container {
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+  justify-content: center;
+  align-items: center;
 }
 
-.login-form{
-    background-color: rgba(0, 0, 0, 0.150);
-    padding: 50px;
-    border-radius: 5px;
-    margin: 20px;
-    text-align: center;
+.login-form {
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 50px;
+  border-radius: 5px;
+  margin: 20px;
+  text-align: center;
 }
 
-
-.l-btn{
-    background-color: #68b4db;
-    color: black;
+.l-btn {
+  background-color: #68b4db;
+  color: black;
+  font-family: 'Rubik', sans-serif;
 }
 
-.l-btn:hover{
-    color: white;
+.l-btn:hover {
+  color: white;
 }
