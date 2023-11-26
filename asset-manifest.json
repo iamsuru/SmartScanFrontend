@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/SmartScanFrontend/static/css/main.1a78d40f.css",
-    "main.js": "/SmartScanFrontend/static/js/main.fcee4c22.js",
+    "main.css": "/SmartScanFrontend/static/css/main.8403dbbc.css",
+    "main.js": "/SmartScanFrontend/static/js/main.eedb890e.js",
+    "static/media/SuryanshShrivastavaResume.pdf": "/SmartScanFrontend/static/media/SuryanshShrivastavaResume.ff4f3b16bc54c1c7f62c.pdf",
     "static/media/portrait_background.png": "/SmartScanFrontend/static/media/portrait_background.fdf07cb2f67a63271bcc.png",
     "static/media/landscape_background.png": "/SmartScanFrontend/static/media/landscape_background.3a5b0f19e4d656ad1193.png",
     "index.html": "/SmartScanFrontend/index.html",
-    "main.1a78d40f.css.map": "/SmartScanFrontend/static/css/main.1a78d40f.css.map",
-    "main.fcee4c22.js.map": "/SmartScanFrontend/static/js/main.fcee4c22.js.map"
+    "main.8403dbbc.css.map": "/SmartScanFrontend/static/css/main.8403dbbc.css.map",
+    "main.eedb890e.js.map": "/SmartScanFrontend/static/js/main.eedb890e.js.map"
   },
   "entrypoints": [
-    "static/css/main.1a78d40f.css",
-    "static/js/main.fcee4c22.js"
+    "static/css/main.8403dbbc.css",
+    "static/js/main.eedb890e.js"
   ]
 }
