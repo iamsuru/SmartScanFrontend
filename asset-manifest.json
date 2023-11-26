@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/SmartScanFrontend/static/css/main.7f5315d5.css",
-    "main.js": "/SmartScanFrontend/static/js/main.f9b898b6.js",
+    "main.css": "/SmartScanFrontend/static/css/main.1a78d40f.css",
+    "main.js": "/SmartScanFrontend/static/js/main.fcee4c22.js",
     "static/media/portrait_background.png": "/SmartScanFrontend/static/media/portrait_background.fdf07cb2f67a63271bcc.png",
     "static/media/landscape_background.png": "/SmartScanFrontend/static/media/landscape_background.3a5b0f19e4d656ad1193.png",
     "index.html": "/SmartScanFrontend/index.html",
-    "main.7f5315d5.css.map": "/SmartScanFrontend/static/css/main.7f5315d5.css.map",
-    "main.f9b898b6.js.map": "/SmartScanFrontend/static/js/main.f9b898b6.js.map"
+    "main.1a78d40f.css.map": "/SmartScanFrontend/static/css/main.1a78d40f.css.map",
+    "main.fcee4c22.js.map": "/SmartScanFrontend/static/js/main.fcee4c22.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f5315d5.css",
-    "static/js/main.f9b898b6.js"
+    "static/css/main.1a78d40f.css",
+    "static/js/main.fcee4c22.js"
   ]
 }
