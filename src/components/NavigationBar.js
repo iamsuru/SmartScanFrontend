@@ -1,5 +1,6 @@
 import React from 'react'
-import { NavItem, NavLink, NavbarBrand } from 'reactstrap'
+import { Link } from 'react-router-dom'
+import { NavItem, NavbarBrand } from 'reactstrap'
 
 function NavigationBar() {
     return (
@@ -13,13 +14,13 @@ function NavigationBar() {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto">
                             <NavItem>
-                                <NavLink className='nav-nav-link mx-4' href='/'>Home</NavLink>
+                                <Link className='nav-nav-link mx-4' to='/'>Home</Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-nav-link mx-4' href='/signup'>Signup</NavLink>
+                                <Link className='nav-nav-link mx-4' to='/signup'>Signup</Link>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-nav-link mx-4' href='/form'>Form</NavLink>
+                                <Link className='nav-nav-link mx-4' to='/form'>Form</Link>
                             </NavItem>
                         </ul>
                     </div>
