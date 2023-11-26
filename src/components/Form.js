@@ -6,7 +6,7 @@ const Preview = () => {
     return (
         <div className='col-md-6'>
             <div className="ratio ratio-1x1">
-                <iframe src='' title='Preview Document' allowFullScreen={true}></iframe>
+                <iframe src={path} title='Preview Document' allowFullScreen={true}></iframe>
             </div>
         </div>
     )
