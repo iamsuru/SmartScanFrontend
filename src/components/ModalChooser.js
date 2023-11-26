@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import PropTypes from 'prop-types';
-import OptionChooser from './OptionChooser';
 import QRcontainer from './QRcontainer';
 
 function ModalChooser(props) {

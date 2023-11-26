@@ -6,7 +6,7 @@ function NavigationBar() {
         <div>
             <nav className="navbar navbar-expand-md nav-bg">
                 <div className="container">
-                    <NavbarBrand className='logo' href='/SmartScanFrontend'>SmartScan</NavbarBrand>
+                    <NavbarBrand className='logo' href='/'>SmartScan</NavbarBrand>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -16,10 +16,10 @@ function NavigationBar() {
                                 <NavLink className='nav-nav-link mx-4' href='/'>Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-nav-link mx-4' href='/SmartScanFrontend/signup'>Signup</NavLink>
+                                <NavLink className='nav-nav-link mx-4' href='/signup'>Signup</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink className='nav-nav-link mx-4' href='/SmartScanFrontend/form'>Form</NavLink>
+                                <NavLink className='nav-nav-link mx-4' href='/form'>Form</NavLink>
                             </NavItem>
                         </ul>
                     </div>

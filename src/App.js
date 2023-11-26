@@ -12,9 +12,9 @@ function App() {
     <div className='bg-img'>
       <NavigationBar />
       <Routes>
-        <Route path='/SmartScanFrontend' element={<Login />} />
-        <Route path='/SmartScanFrontend/signup' element={<Signup />} />
-        <Route path='/SmartScanFrontend/form' element={<Form />} />
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/form' element={<Form />} />
       </Routes>
     </div>
   )
