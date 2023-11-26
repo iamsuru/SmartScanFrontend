@@ -1,6 +1,6 @@
 /* Background.js */ 
 
-label, .nav-nav-link{
+.nav-nav-link{
   font-family: 'Rubik', sans-serif;
 }
 .bg-img {
@@ -37,7 +37,7 @@ label, .nav-nav-link{
 
 .logo {
   font-family: 'Bungee Spice', sans-serif;
-  font-size: 30px;
+  font-size: 29px;
 }
 
 /* Login.js */
@@ -65,4 +65,23 @@ label, .nav-nav-link{
 
 .l-btn:hover {
   color: white;
+}
+
+/* form.js */
+
+
+.details{
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 30px;
+}
+
+.form-btn{
+  background-color: #0DCAF0;
+  width: 100%;
+  color: black;
+}
+
+.form-btn:hover{
+  background-color: success;
 }
