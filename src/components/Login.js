@@ -32,6 +32,7 @@ function Login() {
         <div className='login-container'>
             <div className='login-form'>
                 <form onSubmit={authenticate}>
+                {console.warn('Updated')}
                     <div className='mb-3'>
                         <label htmlFor='email' className='form-label'>Email</label>
                         <input
