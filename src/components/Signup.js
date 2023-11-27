@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 
 function Signup() {
@@ -7,7 +6,6 @@ function Signup() {
     const [name, setName] = useState('')
     const [email_id, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    const history = useHistory()
 
     const registerUser = async (e) => {
         e.preventDefault()
@@ -32,7 +30,7 @@ function Signup() {
                     progress: undefined,
                     theme: "light",
                 });
-                history.push('/form')
+                window.location.href = '/form'
             }
             else if (response.status === 400 && data.message.includes('E11000 duplicate key error collection')) {
                 toast.warn('Email already in use', {
