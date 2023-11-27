@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import path from '../SuryanshShrivastavaResume.pdf'
 import InputForm from './InputForm'
+import Cookies from 'js-cookie'
 
 const Preview = () => {
     return (
@@ -13,10 +14,14 @@ const Preview = () => {
 }
 
 function Form() {
+    useEffect(() => {
+        const cookieValue = Cookies.get('auth-token')
+        console.log(`Cookie value ${cookieValue}`);
+    })
     return (
         <>
             <div className='container'>
-            {console.warn(localStorage.getItem('token'))}
+                {console.warn(localStorage.getItem('token'))}
                 <div className='row'>
                     <InputForm />
                     <Preview />
