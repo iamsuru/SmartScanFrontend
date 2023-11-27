@@ -72,7 +72,7 @@ function Signup() {
     return (
         <>
             <div className="login-container">
-            {console.info('Updated 2')}
+            {console.warn('Updated 2')}
                 <div className="login-form">
                     <form onSubmit={registerUser}>
                         <div className="mb-3">
