@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
     const [email_id, setEmail] = useState('');
@@ -18,13 +20,40 @@ function Login() {
             const data = await response.json()
 
             if (response.ok) {
-                alert(data.message)
+                toast.success(data.message, {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
             else {
-                alert(data.message)
+                toast.error(data.message, {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light",
+                    });
             }
         } catch (error) {
-            alert(error)
+            toast.error(error, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         }
     };
 
@@ -32,7 +61,7 @@ function Login() {
         <div className='login-container'>
             <div className='login-form'>
                 <form onSubmit={authenticate}>
-                {console.warn('Updated')}
+                    {console.warn('Updated')}
                     <div className='mb-3'>
                         <label htmlFor='email' className='form-label'>Email</label>
                         <input
@@ -59,6 +88,7 @@ function Login() {
                         <input type='submit' className='btn btn-primary l-btn' value='Login' />
                     </div>
                 </form>
+                <ToastContainer />
             </div>
         </div>
     );
