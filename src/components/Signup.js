@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify'
 
 function Signup() {
 
@@ -95,6 +96,7 @@ function Signup() {
                             <input type='submit' className='btn btn-primary l-btn' value='Signup' />
                         </div>
                     </form>
+                    <ToastContainer/>
                 </div>
             </div>
         </>
