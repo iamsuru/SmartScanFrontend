@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify'
+import { useNavigate } from 'react-router-dom'
 
 function Signup() {
 
+    const navigate = useNavigate()
     const [name, setName] = useState('')
     const [email_id, setEmail] = useState('')
     const [password, setPassword] = useState('')
-
     const registerUser = async (e) => {
         e.preventDefault()
         try {
@@ -30,7 +31,7 @@ function Signup() {
                     progress: undefined,
                     theme: "light",
                 });
-                window.location.href = '/form'
+                navigate('/')                
             }
             else if (response.status === 400 && data.message.includes('E11000 duplicate key error collection')) {
                 toast.warn('Email already in use', {

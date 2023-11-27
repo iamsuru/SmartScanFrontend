@@ -16,6 +16,7 @@ function Form() {
     return (
         <>
             <div className='container'>
+            {console.warn(localStorage.getItem('token'))}
                 <div className='row'>
                     <InputForm />
                     <Preview />

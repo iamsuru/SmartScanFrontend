@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 function Login() {
+    const navigate = useNavigate()
     const [email_id, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -20,6 +22,7 @@ function Login() {
             const data = await response.json()
 
             if (response.ok) {
+                localStorage.setItem('token', data.token)
                 toast.success(data.message, {
                     position: "bottom-right",
                     autoClose: 5000,
@@ -29,7 +32,8 @@ function Login() {
                     draggable: true,
                     progress: undefined,
                     theme: "light",
-                    });
+                });
+                navigate('/form')
             }
             else {
                 toast.error(data.message, {
@@ -41,7 +45,7 @@ function Login() {
                     draggable: true,
                     progress: undefined,
                     theme: "light",
-                    });
+                });
             }
         } catch (error) {
             toast.error(error, {
@@ -53,7 +57,7 @@ function Login() {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-                });
+            });
         }
     };
 
