@@ -26,7 +26,7 @@ function QRcontainer(props) {
 
   return (
     <>
-      <QRCodeSVG className='mt-5' value={props.uniqueCode} />
+      <QRCodeSVG className='mt-5' value={`https://smartscanmern.netlify.app/upload?${props.uniqueCode}`} />
       <div className='ms-5 me-5 mt-5 mb-5 ps-5 pe-5'>
         <label style={{color:'blue'}}>Remaining Time: {`${seconds} seconds`}</label>
         <Progress animated className="my-3" color="info" value={progressValue}></Progress>
