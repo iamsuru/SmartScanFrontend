@@ -16,8 +16,12 @@ const Preview = () => {
 function Form() {
     useEffect(() => {
         const cookieValue = Cookies.get('auth-token')
-        console.log(`Cookie value ${cookieValue}`);
-    })
+        if (cookieValue) {
+            console.log(`Cookie value ${cookieValue}`);
+        } else {
+            console.log('Cookie not found');
+        }
+    },[])
     return (
         <>
             <div className='container'>
