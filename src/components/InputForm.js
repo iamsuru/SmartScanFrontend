@@ -4,6 +4,10 @@ import ModalChooser from './ModalChooser';
 const InputForm = () => {
     const [modal, setModal] = useState(false);
 
+    const [name, setName] = useState('')
+    const [email_id, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
     const toggle = () => setModal(!modal);
     return (
         <div className='col-md-6 details'>
@@ -11,11 +15,11 @@ const InputForm = () => {
                 <form>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Full Name</label>
-                        <input type="text" className="form-control" id="name" />
+                        <input type="text" className="form-control" id="name" value={name} onChange={(e) => setName(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="email" className="form-label">Email Address</label>
-                        <input type="email" className="form-control" id="email" />
+                        <input type="email" className="form-control" id="email" value={email_id} onChange={(e) => setEmail(e.target.value)}/>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="dob" className="form-label">Date of Birth</label>
@@ -56,7 +60,7 @@ const InputForm = () => {
                     </div>
                 </form>
             </div>
-            <ModalChooser modal={modal} toggle={toggle}/>
+            <ModalChooser modal={modal} toggle={toggle} />
         </div>
     )
 }
