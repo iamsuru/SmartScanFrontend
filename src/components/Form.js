@@ -11,12 +11,7 @@ class FetchURL {
             else {
                 seconds--;
                 try {
-                    const response = await fetch('https://smartscanbackend.up.railway.app/api/getFilePath', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
-                    })
+                    const response = await fetch('https://smartscanbackend.up.railway.app/api/getFilePath')
                     if (response.status === 200) {
                         console.log('File Found')
                         clearInterval(intervalId)
