@@ -1,30 +1,40 @@
-import React from 'react'
-import { ToastContainer, toast } from 'react-toastify'
-
+import React, { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 function MobileUploader() {
-    const sendToServer = () =>{
-        toast.success('Uploaded Successfully', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-        });
-    }
+    const [resFromServer, setData] = useState('')
+    useEffect(() => {
+        const sendLocation = async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const locationParameter = urlParams.get('location');
+            console.log('Location Parameter:', locationParameter);
+            const response = await fetch('https://smartscanbackend.up.railway.app/api/sendLocationString', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ locationParameter })
+            })
+
+            const data = await response.json()
+            setData(data)
+        }
+
+        sendLocation()
+    }, []);
+
+    toast.success(resFromServer.message)
+
     return (
         <div className='login-container'>
-            <div className='login-form'>
+            <form className='login-form'>
                 <h4 className='mb-4'>Upload document</h4>
                 <input type="file" className="form-control" id="inputGroupFile02" />
-                <input className='mt-4 btn btn-info' type='button' value='Upload' onClick={sendToServer}/>
-                <ToastContainer/>
-            </div>
+                <input className='mt-4 btn btn-info' type='button' value='Upload' />
+                <ToastContainer />
+            </form>
         </div>
-    )
+    );
 }
 
-export default MobileUploader
+export default MobileUploader;
