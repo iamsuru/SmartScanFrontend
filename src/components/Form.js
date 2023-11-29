@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import InputForm from './InputForm'
-import { toast } from 'react-toastify'
 
-const [filePath, setFilePath] = useState('')
+let filePath = ''
 class FetchURL {
     async fetchURL() {
         let seconds = 59;
@@ -18,7 +17,7 @@ class FetchURL {
                         console.log('File Found')
                         clearInterval(intervalId)
                         const data = await response.json()
-                        setFilePath(data.uploadPath)
+                        filePath = data.uploadPath
                     }
                     else if (response.status === 404) {
                         console.log('File not found');
@@ -31,12 +30,12 @@ class FetchURL {
                 }
             }
         },1000)
-        const response = await fetch('https://smartscanbackend.up.railway.app/api/getFilePath')
-        if (!response.ok) {
-            toast.error('Network response was not ok')
-        }
-        const data = await response.json()
-        setFilePath(data.uploadPath)
+        // const response = await fetch('https://smartscanbackend.up.railway.app/api/getFilePath')
+        // if (!response.ok) {
+        //     toast.error('Network response was not ok')
+        // }
+        // const data = await response.json()
+        // setFilePath(data.uploadPath)
     }
 }
 
