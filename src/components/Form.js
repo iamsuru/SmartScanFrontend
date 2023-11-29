@@ -23,7 +23,7 @@ class FetchURL {
                         const data = await response.json()
                         const filePath = data.uploadPath
                         console.log(filePath)
-                        document.getElementById('preview').src = filePath
+                        document.getElementById('preview').src = `https://smartscanbackend.up.railway.app${filePath}`
                     }
                     else if (response.status === 404) {
                         console.log('File not found');
