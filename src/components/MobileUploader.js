@@ -6,34 +6,66 @@ function MobileUploader() {
     const [resFromServer, setData] = useState('');
 
     useEffect(() => {
-        const sendLocation = async () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const locationParameter = urlParams.get('location');
-            console.log('Location Parameter:', locationParameter);
+        const urlParams = new URLSearchParams(window.location.search)
+        const locationParameter = urlParams.get('location')
+        console.log(locationParameter);
+        if (locationParameter) {
+            sendLocation(locationParameter)
+        }
+    }, [])
 
-            try {
-                const response = await fetch('https://smartscanbackend.up.railway.app/api/sendLocationString', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ locationParameter }),
-                });
 
-                const data = await response.json();
-                setData(data);
-            } catch (error) {
-                console.error('Error sending location:', error);
-                toast.error('Error sending location');
-            }
-        };
-
-        sendLocation();
-    }, []);
+    const sendLocation = async (locationParameter) => {
+        try {
+            const response = await fetch('https://smartscanbackend.up.railway.app/api/sendLocationString', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ locationParameter })
+            })
+            const data = await response.json()
+            setData(data)
+        }
+        catch (error) {
+            console.error('Error sending location:', error);
+            toast.error('Error sending location');
+        }
+    }
 
     if (resFromServer && resFromServer.message) {
         toast.success(resFromServer.message);
     }
+
+    // useEffect(() => {
+    //     const sendLocation = async () => {
+    //         const urlParams = new URLSearchParams(window.location.search);
+    //         const locationParameter = urlParams.get('location');
+    //         console.log('Location Parameter:', locationParameter);
+
+    //         try {
+    //             const response = await fetch('https://smartscanbackend.up.railway.app/api/sendLocationString', {
+    //                 method: 'POST',
+    //                 headers: {
+    //                     'Content-Type': 'application/json',
+    //                 },
+    //                 body: JSON.stringify({ locationParameter }),
+    //             });
+
+    //             const data = await response.json();
+    //             setData(data);
+    //         } catch (error) {
+    //             console.error('Error sending location:', error);
+    //             toast.error('Error sending location');
+    //         }
+    //     };
+
+    //     sendLocation();
+    // }, []);
+
+    // if (resFromServer && resFromServer.message) {
+    //     toast.success(resFromServer.message);
+    // }
 
     return (
         <div className='login-container'>
