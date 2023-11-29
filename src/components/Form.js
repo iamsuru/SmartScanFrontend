@@ -15,13 +15,14 @@ class FetchURL {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
-                        },
+                        }
                     })
                     if (response.status === 200) {
                         console.log('File Found')
                         clearInterval(intervalId)
                         const data = await response.json()
                         const filePath = data.uploadPath
+                        console.log(filePath)
                         document.getElementById('preview').src = filePath
                     }
                     else if (response.status === 404) {
