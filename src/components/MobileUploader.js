@@ -1,29 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MobileUploader() {
-    const [resFromServer, setData] = useState('')
+    const [resFromServer, setData] = useState('');
+
     useEffect(() => {
         const sendLocation = async () => {
             const urlParams = new URLSearchParams(window.location.search);
             const locationParameter = urlParams.get('location');
             console.log('Location Parameter:', locationParameter);
-            const response = await fetch('https://smartscanbackend.up.railway.app/api/sendLocationString', {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ locationParameter })
-            })
 
-            const data = await response.json()
-            setData(data)
-        }
+            try {
+                const response = await fetch('https://smartscanbackend.up.railway.app/api/sendLocationString', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ locationParameter }),
+                });
 
-        sendLocation()
+                const data = await response.json();
+                setData(data);
+                if (data && data.message) {
+                    toast.success(data.message);
+                }
+            } catch (error) {
+                console.error('Error sending location:', error);
+                toast.error('Error sending location');
+            }
+        };
+
+        sendLocation();
     }, []);
-
-    toast.success(resFromServer.message)
 
     return (
         <div className='login-container'>
