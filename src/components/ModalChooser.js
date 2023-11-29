@@ -32,7 +32,6 @@ function ModalChooser(props) {
   useEffect(() => {
     if (modal) {
       const uniqueCode = generateUniqueID()
-      console.log(uniqueCode);
       setUniqueCode(uniqueCode)
     }
   }, [modal])
