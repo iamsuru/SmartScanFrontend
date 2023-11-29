@@ -3,29 +3,29 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function MobileUploader() {
-    const [resFromServer, setData] = useState('');
+    // const [resFromServer, setData] = useState('');
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search)
-        const locationParameter = urlParams.get('location')
-        console.log(locationParameter);
-        if (locationParameter) {
-            sendLocation(locationParameter)
+        const location = urlParams.get('location')
+        console.log(location);
+        if (location) {
+            sendLocation(location)
         }
     }, [])
 
 
-    const sendLocation = async (locationParameter) => {
+    const sendLocation = async (location) => {
         try {
             const response = await fetch('https://smartscanbackend.up.railway.app/api/sendLocationString', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ locationParameter })
+                body: JSON.stringify({ location })
             })
             const data = await response.json()
-            setData(data)
+            // setData(data)
         }
         catch (error) {
             console.error('Error sending location:', error);
@@ -33,9 +33,9 @@ function MobileUploader() {
         }
     }
 
-    if (resFromServer && resFromServer.message) {
-        toast.success(resFromServer.message);
-    }
+    // if (resFromServer && resFromServer.message) {
+    //     toast.success(resFromServer.message);
+    // }
 
     // useEffect(() => {
     //     const sendLocation = async () => {
