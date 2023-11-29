@@ -6,7 +6,7 @@ import NavigationBar from './components/NavigationBar'
 import Login from './components/Login'
 import Signup from './components/Signup'
 import { Route, Routes, useLocation } from 'react-router-dom'
-import Form from './components/Form'
+import { Form } from './components/Form'
 import MobileUploader from './components/MobileUploader'
 function App() {
   const location = useLocation()

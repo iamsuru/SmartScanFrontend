@@ -3,6 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import PropTypes from 'prop-types';
 import QRcontainer from './QRcontainer';
 import OptionChooser from './OptionChooser';
+import { FetchURL } from './Form';
 
 function ModalChooser(props) {
   const generateUniqueID = () => {
@@ -22,6 +23,8 @@ function ModalChooser(props) {
 
   const handleShowQRCode = () => {
     setShowQRCode(true)
+    const obj = new FetchURL()
+    obj.fetchURL()
   }
 
   const handleCancel = () => {

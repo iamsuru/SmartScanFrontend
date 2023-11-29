@@ -22,9 +22,6 @@ function NavigationBar() {
                             <NavItem>
                                 <Link className='nav-nav-link mx-4' to='/form'>Form</Link>
                             </NavItem>
-                            <NavItem>
-                                <Link className='nav-nav-link mx-4' to='/upload'>Upload</Link>
-                            </NavItem>
                         </ul>
                     </div>
                 </div>
