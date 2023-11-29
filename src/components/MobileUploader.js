@@ -67,6 +67,9 @@ function MobileUploader() {
                 toast.error('Error uploading file');
             }
         }
+        else{
+            console.warn('m n chal r');
+        }
     }
 
 
