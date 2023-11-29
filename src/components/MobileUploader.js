@@ -22,9 +22,6 @@ function MobileUploader() {
 
                 const data = await response.json();
                 setData(data);
-                if (data && data.message) {
-                    toast.success(data.message);
-                }
             } catch (error) {
                 console.error('Error sending location:', error);
                 toast.error('Error sending location');
@@ -33,6 +30,10 @@ function MobileUploader() {
 
         sendLocation();
     }, []);
+
+    if (resFromServer && resFromServer.message) {
+        toast.success(resFromServer.message);
+    }
 
     return (
         <div className='login-container'>
