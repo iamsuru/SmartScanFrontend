@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -24,7 +24,8 @@ function MobileUploader() {
                 },
                 body: JSON.stringify({ location })
             })
-            const data = await response.json()
+            console.warn(location);
+            // const data = await response.json()
             // setData(data)
         }
         catch (error) {
