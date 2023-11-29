@@ -25,7 +25,8 @@ function MobileUploader() {
                 body: JSON.stringify({ location })
             })
             console.warn(location);
-            // const data = await response.json()
+            const data = await response.json()
+            console.info(data)
             // setData(data)
         }
         catch (error) {
